@@ -1,0 +1,414 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2021-10-03T17:27:43.046Z",
+  "__export_source": "insomnia.desktop.app:v2021.6.0",
+  "resources": [
+    {
+      "_id": "req_0bbd9d99da1f49b49176242e609b62a5",
+      "parentId": "fld_2565e656deba417a921ee8fcf8b21b61",
+      "modified": "1637671845661",
+      "created": 1655069524716,
+      "url": "{{ _.base_url }}/v1/{{ _.resource }}",
+      "name": "Create (Public)",
+      "description": "Rota pública para criação de um usuário",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"name\": \"{% gerarNome true, '', true, true, '', true, true %}\",\n\t\"email\": \"{% gerarEmail 'email.test.', true, 1, 9999, '', 'mock.com.br' %}\",\n\t\"phone\": \"{% gerarNumeroTelefone true, false, 0, true, 0 %}\",\n\t\"cpf\": \"{% geradorDeCPF true %}\",\n\t\"cnpj\": \"{% geradorDeCNPJ true %}\",\n\t\"password\": \"{% prompt 'Senha', 'Digite uma senha de no mínimo 3 caracteres', 'minhasenha', '', true, true %}\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_4a60f853ba8646eb901fbd3339b04e2c"
+        },
+        {
+          "id": "pair_21a4c6026c5642f6832f978f233e2804",
+          "name": "Accept",
+          "value": "application/json",
+          "description": ""
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1655069524716,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "fld_2565e656deba417a921ee8fcf8b21b61",
+      "parentId": "__WORKSPACE_ID__",
+      "modified": "1637671845661",
+      "created": 1655069516300,
+      "name": "Users",
+      "description": "",
+      "environment": {
+        "resource": "users"
+      },
+      "environmentPropertyOrder": {
+        "&": [
+          "resource"
+        ]
+      },
+      "metaSortKey": -1655069516300,
+      "_type": "request_group"
+    },
+    {
+      "_id": "__WORKSPACE_ID__",
+      "parentId": null,
+      "modified": "1637671845661",
+      "created": 1654968599226,
+      "name": "Insomnias Burguer",
+      "description": "",
+      "scope": "collection",
+      "_type": "workspace"
+    },
+    {
+      "_id": "req_2ff8e2d3528349db9299ecb930f3db06",
+      "parentId": "fld_2565e656deba417a921ee8fcf8b21b61",
+      "modified": "1637671845661",
+      "created": 1655119524309,
+      "url": "{{ _.base_url }}/v1/{{ _.resource }}/c034fcd5-d72d-4552-baef-a155af2e51e5",
+      "name": "Update (Private)",
+      "description": "Rota para alteração dos dados de um usuário",
+      "method": "PUT",
+      "body": {
+        "mimeType": "multipart/form-data",
+        "params": []
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "multipart/form-data",
+          "id": "pair_4a60f853ba8646eb901fbd3339b04e2c"
+        },
+        {
+          "id": "pair_21a4c6026c5642f6832f978f233e2804",
+          "name": "Accept",
+          "value": "application/json",
+          "description": ""
+        }
+      ],
+      "authentication": {
+        "type": "bearer",
+        "token": "{{ _.token }}"
+      },
+      "metaSortKey": -1655019919452.5,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_f340dcfebd7546ecbf4da9a42608a1b9",
+      "parentId": "fld_2565e656deba417a921ee8fcf8b21b61",
+      "modified": "1637671845661",
+      "created": 1655119767079,
+      "url": "{{ _.base_url }}/v1/{{ _.resource }}",
+      "name": "List (Private)",
+      "description": "Rota para listagem de todos usuários do sistema com paginação!",
+      "method": "GET",
+      "body": {},
+      "parameters": [
+        {
+          "name": "noPaginate",
+          "value": "1",
+          "id": "pair_a8bab12116ce45b6b92e6bf36ec36c5d"
+        },
+        {
+          "name": "page",
+          "value": "1",
+          "id": "pair_6e3eb2cfed524c269bca8e5bc097cd0d"
+        },
+        {
+          "name": "perPage",
+          "value": "10",
+          "id": "pair_1b4b9f8293bf49ce95eb8aa8fcda1eda"
+        },
+        {
+          "name": "name",
+          "value": "Fernandes",
+          "id": "pair_3d680d70f4094a4e98b428d441e22edc",
+          "disabled": true
+        },
+        {
+          "id": "pair_c11026438089452cafe38a5ee03b61bb",
+          "name": "",
+          "value": "",
+          "description": ""
+        }
+      ],
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "application/json",
+          "id": "pair_9ec84c37740d4b23af4dcd780094e5a5"
+        }
+      ],
+      "authentication": {
+        "type": "bearer",
+        "token": "{{ _.token }}"
+      },
+      "metaSortKey": -1655119767079,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_139fca8cf8284f4db0436f9fd60de63c",
+      "parentId": "fld_2565e656deba417a921ee8fcf8b21b61",
+      "modified": "1637671845661",
+      "created": 1655120156498,
+      "url": "{{ _.base_url }}/v1/{{ _.resource }}/1",
+      "name": "Show (Private)",
+      "description": "Rota para retornar usuários pelo id informado por parâmetro users/:id",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "id": "pair_0b8ec6fd8b9b48e183ed2e0a0c59cdde",
+          "name": "Content-Type",
+          "value": "application/json",
+          "description": ""
+        }
+      ],
+      "authentication": {
+        "type": "bearer",
+        "token": "{{ _.token }}"
+      },
+      "metaSortKey": -1655094645897.5,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_39a73982a2d74337865c4d754cc739b1",
+      "parentId": "fld_2565e656deba417a921ee8fcf8b21b61",
+      "modified": "1637671845661",
+      "created": 1655131379417,
+      "url": "{{ _.base_url }}/v1/{{ _.resource }}/f9253a41-9b8e-4b51-9648-7880472faff5",
+      "name": "Delete (Private Super Admin)",
+      "description": "Rota para exclusão de um usuário",
+      "method": "DELETE",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "id": "pair_a92c6ac7cb9a469188d4586309e38006",
+          "name": "Accept",
+          "value": "application/json",
+          "description": ""
+        }
+      ],
+      "authentication": {
+        "type": "bearer",
+        "token": "{{ _.token }}"
+      },
+      "metaSortKey": -1655019919402.5,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_1cf9975fae994aa081375e0b844d3bb5",
+      "parentId": "fld_230c1ba48a6247999498c66dfdc0cd6d",
+      "modified": "1637671845661",
+      "created": 1654970314189,
+      "url": "{{ _.base_url }}/v1/login",
+      "name": "Login (Public)",
+      "description": "Rota para login",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/x-www-form-urlencoded",
+        "params": [
+          {
+            "id": "pair_e5d31ec565a04a02a1d468cdc5b99100",
+            "name": "email",
+            "value": "manoel@email.com",
+            "description": ""
+          },
+          {
+            "id": "pair_4ba98cc2317e45c5b80c60638dccd32f",
+            "name": "password",
+            "value": "manoelpassword",
+            "description": ""
+          }
+        ]
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/x-www-form-urlencoded",
+          "id": "pair_597aace61a0d43e8b32d11334d0b81e1"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1654970314189,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "fld_230c1ba48a6247999498c66dfdc0cd6d",
+      "parentId": "__WORKSPACE_ID__",
+      "modified": "1637671845661",
+      "created": 1655119575966,
+      "name": "Auth",
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1655119575966,
+      "_type": "request_group"
+    },
+    {
+      "_id": "req_fdbb4b24d52049c4bd9d29cb9b4be432",
+      "parentId": "fld_0f4756cc0a08409a82680a27d273363e",
+      "modified": "1637671845661",
+      "created": 1655668910168,
+      "url": "{{ _.base_url }}/",
+      "name": "Server On (Public)",
+      "description": "Rota para testar se o servidor está online",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "id": "pair_79abdc0876b34e0cb275639502478c57",
+          "name": "Accept",
+          "value": "text/html",
+          "description": ""
+        },
+        {
+          "id": "pair_9fcc4aa1f87b42278c99bbb24ab45705",
+          "name": "",
+          "value": "",
+          "description": ""
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1655668927937,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "fld_0f4756cc0a08409a82680a27d273363e",
+      "parentId": "__WORKSPACE_ID__",
+      "modified": "1637671845661",
+      "created": 1655668892974,
+      "name": "Test",
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1655119576016,
+      "_type": "request_group"
+    },
+    {
+      "_id": "req_b5f5111028c047cc921513eef0a4d5df",
+      "parentId": "fld_0f4756cc0a08409a82680a27d273363e",
+      "modified": "1637671845661",
+      "created": 1655668927887,
+      "url": "{{ _.base_url }}/menu",
+      "name": "Menu (Public)",
+      "description": "Rota para retornar o cardápio",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "id": "pair_a71a7d57125e48fcb2b32472a3342e6c",
+          "name": "Accept",
+          "value": "image/png",
+          "description": ""
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1655668927887,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "__BASE_ENVIRONMENT_ID__",
+      "parentId": "__WORKSPACE_ID__",
+      "modified": "1637671845661",
+      "created": 1654968599229,
+      "name": "Base Environment",
+      "data": {
+        "token": "{% response 'body', 'req_1cf9975fae994aa081375e0b844d3bb5', 'b64::JC50b2tlbg==::46b', 'never', 60 %}"
+      },
+      "dataPropertyOrder": {
+        "&": [
+          "token"
+        ]
+      },
+      "color": null,
+      "isPrivate": false,
+      "metaSortKey": 1654968599229,
+      "_type": "environment"
+    },
+    {
+      "_id": "env_e18596716f634d32a9bd28fb5f9294de",
+      "parentId": "__BASE_ENVIRONMENT_ID__",
+      "modified": "1637671845661",
+      "created": 1656164376446,
+      "name": "Development Environment",
+      "data": {
+        "base_url": "http://localhost:3333"
+      },
+      "dataPropertyOrder": {
+        "&": [
+          "base_url"
+        ]
+      },
+      "color": "#706b6b",
+      "isPrivate": false,
+      "metaSortKey": 1656164376446,
+      "_type": "environment"
+    }
+  ]
+}
