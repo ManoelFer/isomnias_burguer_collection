@@ -81,7 +81,14 @@
       "method": "PUT",
       "body": {
         "mimeType": "multipart/form-data",
-        "params": []
+        "params": [
+          {
+            "id": "pair_ea4aaba55dac46708fb28643d0ca810a",
+            "name": "name",
+            "value": "Manoel",
+            "description": ""
+          }
+        ]
       },
       "parameters": [],
       "headers": [
